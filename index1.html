@@ -1,0 +1,48 @@
+	<!DOCTYPE html>
+	<html lang="en-US" data-ng-app="myApp">
+	<head>
+	<title>Welcome to login</title>
+	<meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
+	</head>
+	<body>
+	<div class="container" data-ng-controller="loginCtrl">
+  	<h1 class="text-center">Login</h1>
+	<div class="row">
+		<form class="login-form" name="loginform" method="post" data-ng-submit="submit(loginform)">
+		<div class="col-sm-12"><p data-ng-class="result" style="padding: 15px; margin: 0;">{{ resultMessage }}</p></div>
+		<div class="col-sm-4">&nbsp;</div>
+		<div class="col-sm-4">
+			<div class="form-group">
+			  <label for="email">Email:</label>
+			  <input type="text" class="form-control" id="email" data-ng-model="formData.inputData.email">
+			</div>
+			<div class="form-group">
+			  <label for="pwd">Password:</label>
+			  <input type="password" class="form-control" id="pwd" data-ng-model="formData.inputData.pwd">
+			</div>
+			<div class="form-group text-center">
+			  
+			  <button type="submit" class="btn btn-success">Login</button>
+			</div>
+		</div>
+		<div class="col-sm-4">&nbsp;</div>
+		</form>
+
+	</div>
+	</div>
+<script src="js/app.js"></script>
+<script src="js/appCtrl.js"></script>
+	</body>
+	</html>

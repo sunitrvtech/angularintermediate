@@ -1,0 +1,55 @@
+<div>
+	<div class="vertical-middle">
+        <div class="container">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Manage Users</h2>
+                </div>
+                <div ng-controller="usersCtrl" class="panel-body">
+                    <form name="contactform" method="post" action="" class="form-horizontal" role="form">
+                        <div class="form-group" ng-class="{ 'has-error': contactform.inputName.$invalid && submitted }">
+                            <label for="inputName" class="col-lg-2 control-label">Name</label>
+                            <div class="col-lg-10">
+                                <input ng-model="formData.inputName" type="text" class="form-control" id="inputName" name="inputName" placeholder="Your Name" required>
+                            </div>
+                        </div>
+                        <div class="form-group" ng-class="{ 'has-error': contactform.inputEmail.$invalid && submitted }">
+                            <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                            <div class="col-lg-10">
+                                <input ng-model="formData.inputEmail" type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Your Email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="col-lg-offset-2 col-lg-10">
+                                <button type="button" class="btn btn-default" data-ng-click="saveUser()" >
+                                   Add
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <p ng-class="result" style="padding: 15px; margin: 0;">{{ resultMessage }}</p>
+<table class="table">
+<thead> 
+<tr>
+    <th>Name</th>
+    <th>Email</th>   
+    <th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="user in users">
+    <td>{{ user.inputName }}</td>
+    <td>{{ user.inputEmail }}</td>
+    <td>
+        <a  class="glyphicon glyphicon-edit" ng-click="edit(user.id)"></a> | 
+        <a  class="glyphicon glyphicon-trash" ng-click="delete(user.id)"></a>
+    </td>
+ </tr>
+</tbody>
+</table>   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
